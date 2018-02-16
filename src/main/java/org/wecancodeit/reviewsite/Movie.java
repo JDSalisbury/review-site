@@ -2,13 +2,13 @@ package org.wecancodeit.reviewsite;
 
 public class Movie {
 
-	private long id;
+	private Long id;
 	private String title;
 	private String category;
 	private String content;
 	private String image;
 
-	public Movie(long id, String title, String image, String category, String content)	{
+	public Movie(Long id, String title, String image, String category, String content)	{
 		this.id = id;
 		this.title = title;
 		this.category = category;
@@ -16,7 +16,7 @@ public class Movie {
 		this.image = image;
 	}
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

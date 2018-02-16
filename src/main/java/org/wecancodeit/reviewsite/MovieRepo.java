@@ -4,16 +4,20 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+@Repository
 public class MovieRepo {
 		
 	protected Map<Long, Movie> reviews = new HashMap<>();
 	
 	public MovieRepo() {
-//		Movie movie1 = new Movie(123L, "Hook", null, null, null);
-//		Movie movie2 = new Movie(223L, "Jumanji", null, null, null);
-//		Movie movie3 = new Movie(323L, "Jack", null, null, null);
-//		Movie movie4 = new Movie(423L, "Bicentenial Man", null, null, null);
-//		
+		Movie movie1 = new Movie(123L, "Hook", "something", "Something", "Something");
+		Movie movie2 = new Movie(223L, "Jumanji", "Something", "Something", "Something");
+		Movie movie3 = new Movie(323L, "Jack", "Something", "Something", "Somehting");
+		Movie movie4 = new Movie(423L, "Bicentenial Man", "Something", "Something", "Something");
+		
+		
+		populateMovieMap(movie1, movie2, movie3, movie4);
 		
 	}
 	
@@ -29,7 +33,7 @@ public class MovieRepo {
 	}
 	
 
-	public Movie findOne(long id) {
+	public Movie findOne(Long id) {
 		return reviews.get(id);
 	}
 
