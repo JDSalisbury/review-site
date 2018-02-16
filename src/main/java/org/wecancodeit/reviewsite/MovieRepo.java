@@ -11,10 +11,10 @@ public class MovieRepo {
 	protected Map<Long, Movie> reviews = new HashMap<>();
 	
 	public MovieRepo() {
-		Movie movie1 = new Movie(123L, "Hook", "something", "Something", "Something");
-		Movie movie2 = new Movie(223L, "Jumanji", "Something", "Something", "Something");
-		Movie movie3 = new Movie(323L, "Jack", "Something", "Something", "Somehting");
-		Movie movie4 = new Movie(423L, "Bicentenial Man", "Something", "Something", "Something");
+		Movie movie1 = new Movie(123L, "Hook", "/images/hook.jpg", "Comedy", "Decent Peter Pan Movie");
+		Movie movie2 = new Movie(223L, "Jumanji", "/images/jumanji.jpg", "Comedy", "Is now the \"original\" one");
+		Movie movie3 = new Movie(323L, "Jack", "/images/jack.jpg", "Comedy", "Could have been better");
+		Movie movie4 = new Movie(423L, "Bicentenial Man", "/images/bicentennialMan.jpg", "Dramedy", "Too long didnt finish.");
 		
 		
 		populateMovieMap(movie1, movie2, movie3, movie4);
