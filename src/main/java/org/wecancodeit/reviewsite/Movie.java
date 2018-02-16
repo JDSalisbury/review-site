@@ -6,12 +6,14 @@ public class Movie {
 	private String title;
 	private String category;
 	private String content;
+	private String image;
 
-	public Movie(long id, String title, String category, String content)	{
+	public Movie(long id, String title, String image, String category, String content)	{
 		this.id = id;
 		this.title = title;
 		this.category = category;
 		this.content = content;
+		this.image = image;
 	}
 	
 	public long getId() {
@@ -30,5 +32,8 @@ public class Movie {
 		return content;
 	}
 
+	public String getImage() {
+		return image;
+	}
 	
 }

@@ -1,8 +1,11 @@
 package org.wecancodeit.reviewsite;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
+
+import java.util.Collection;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,35 +13,41 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class MovieRepoTest {
-
+	
 	private MovieRepo underTest;
-	
-	
-	@Mock
-	private Movie firstMovie;
-	
-	private long firstMovieId = 123L;
-	
-	
-	@Mock
-	private Movie secondMovie;
-	
-	private long secondMovieId = 223L;
-	
-	@Before
-	public void setUp() {
-		MockitoAnnotations.initMocks(this);
+
+	private long firstMovieId = 23L;
+	private Movie firstMovie = new Movie(firstMovieId, "first movie", "description of first course", null, null);
+
+	private long secondMovieId = 86L;
+	private Movie secondMovie = new Movie(secondMovieId, "second movie", "description of second course", null, null);
+
+	@Test
+	public void shouldFindFirstMovie() {
+		underTest = new MovieRepo(firstMovie);
+
+		Movie result = underTest.findOne(firstMovieId);
+
+		assertThat(result, is(firstMovie));
 		
-		when(firstMovie.getId()).thenReturn(firstMovieId);
-		when(secondMovie.getId()).thenReturn(secondMovieId);
 	}
 	
 	@Test
-	public void shouldFindFirstMovie() {
-		underTest = new MovieRepo();
-		
-		Movie result = underTest.findOne(firstMovieId);
-		assertThat(result, is(firstMovie));
+	public void shouldFindSecondMovie() {
+
+		underTest = new MovieRepo(firstMovie, secondMovie);
+
+		Movie result = underTest.findOne(secondMovieId);
+
+		assertThat(result, is(secondMovie));
 	}
 	
+	@Test
+	public void shouldFindAll() {
+		underTest = new MovieRepo(firstMovie, secondMovie); 
+
+		Collection<Movie> result = underTest.findAll();
+
+		assertThat(result, containsInAnyOrder(firstMovie, secondMovie));
+	}
 }
