@@ -8,14 +8,14 @@ public class Movie {
 	private String content;
 	private String image;
 
-	public Movie(Long id, String title, String image, String category, String content)	{
+	public Movie(Long id, String title, String image, String category, String content) {
 		this.id = id;
 		this.title = title;
 		this.category = category;
 		this.content = content;
 		this.image = image;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -35,5 +35,5 @@ public class Movie {
 	public String getImage() {
 		return image;
 	}
-	
+
 }

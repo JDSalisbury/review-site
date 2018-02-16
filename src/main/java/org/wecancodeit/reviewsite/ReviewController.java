@@ -12,17 +12,17 @@ public class ReviewController {
 
 	@Resource
 	MovieRepo movieRepo;
-	
+
 	@RequestMapping("/movies")
 	public String getAllMovies(Model model) {
 		model.addAttribute("reviews", movieRepo.findAll());
 		return "movies";
 	}
-	
+
 	@RequestMapping("/movie")
-	public String getAMovie(@RequestParam Long id,  Model model) {
+	public String getAMovie(@RequestParam Long id, Model model) {
 		model.addAttribute("reviews", movieRepo.findOne(id));
 		return "movie";
 	}
-	
+
 }
