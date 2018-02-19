@@ -9,7 +9,7 @@ import java.util.Collection;
 import org.junit.Test;
 
 public class MovieRepoTest {
-	
+
 	private MovieRepo underTest;
 
 	private long firstMovieId = 23L;
@@ -25,9 +25,9 @@ public class MovieRepoTest {
 		Movie result = underTest.findOne(firstMovieId);
 
 		assertThat(result, is(firstMovie));
-		
+
 	}
-	
+
 	@Test
 	public void shouldFindSecondMovie() {
 
@@ -37,10 +37,10 @@ public class MovieRepoTest {
 
 		assertThat(result, is(secondMovie));
 	}
-	
+
 	@Test
 	public void shouldFindAll() {
-		underTest = new MovieRepo(firstMovie, secondMovie); 
+		underTest = new MovieRepo(firstMovie, secondMovie);
 
 		Collection<Movie> result = underTest.findAll();
 
